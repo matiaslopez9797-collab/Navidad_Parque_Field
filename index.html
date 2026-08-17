@@ -10,7 +10,7 @@
     @media(max-width:1000px){.side{width:82px}.brand{font-size:14px;padding-left:2px}.brand small,.nav button span,.user div{display:none}.nav button{text-align:center;font-size:18px}.main{margin-left:82px}.grid{grid-template-columns:1fr}.kanban{grid-template-columns:repeat(4,270px)}}
     @media(max-width:680px){.side{inset:auto 0 0;width:auto;height:65px;padding:6px;flex-direction:row}.brand,.user{display:none}.nav{display:flex;width:100%;justify-content:space-around}.nav button{padding:10px}.nav button:nth-child(n+6){display:none}.main{margin:0 0 65px}.top{height:62px}.content{padding:23px 14px}.metrics{grid-template-columns:1fr}.head h1{font-size:25px}.head .primary{padding:11px}.formrow{grid-template-columns:1fr}.search{width:45px}.search input{display:none}}
   </style>
-  <style>.sync{font-size:11px;color:var(--muted);white-space:nowrap}.sync.online{color:var(--green)}.sync.error{color:var(--red)}</style>
+  <style>.sync{font-size:11px;color:var(--muted);white-space:nowrap}.sync.online{color:var(--green)}.sync.error{color:var(--red)}.kanban{grid-template-columns:repeat(5,minmax(245px,1fr))}@media(max-width:1000px){.kanban{grid-template-columns:repeat(5,270px)}}</style>
 </head>
 <body>
 <div class="app">
@@ -24,7 +24,7 @@ const initial={
  tasks:[],
  members:[]
 };
-const STORAGE_KEY='npf-data-v2',STATUSES=['Pendientes','En diseño','Aprobados','Finalizados'];
+const STORAGE_KEY='npf-data-v2',STATUSES=['Pendientes','En gestión','En diseño','Aprobados','Finalizados'];
 const SUPABASE_URL='https://rlzmyuizjdvbvcyeruyq.supabase.co';
 const SUPABASE_KEY='sb_publishable_F5l_0eQPnfZxUHecqyg2IA_C4HA--QX';
 const saved=localStorage.getItem(STORAGE_KEY);let data=saved?JSON.parse(saved):structuredClone(initial);let view='tareas',selected=null,dragId=null;
